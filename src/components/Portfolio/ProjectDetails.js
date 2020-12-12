@@ -35,7 +35,7 @@ export const ProjectDetails = (props) => {
         </div>
         <div className="project-content">
           <div className="project-title"> {project?.name || ""} </div>
-          <div className="project-tag">Subtitle</div>
+          <div className="project-tag"> {project?.tech || ""} </div>
           <div className="project-description">
             {project?.description &&
               project.description.map((item,index) => (
