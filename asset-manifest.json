@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/pitcha-pie/static/css/main.64847b91.chunk.css",
-    "main.js": "/pitcha-pie/static/js/main.6b4ec11e.chunk.js",
-    "main.js.map": "/pitcha-pie/static/js/main.6b4ec11e.chunk.js.map",
+    "main.js": "/pitcha-pie/static/js/main.7b3935c3.chunk.js",
+    "main.js.map": "/pitcha-pie/static/js/main.7b3935c3.chunk.js.map",
     "runtime-main.js": "/pitcha-pie/static/js/runtime-main.a7b4d4d2.js",
     "runtime-main.js.map": "/pitcha-pie/static/js/runtime-main.a7b4d4d2.js.map",
     "static/js/2.7ba07a31.chunk.js": "/pitcha-pie/static/js/2.7ba07a31.chunk.js",
@@ -12,30 +12,12 @@
     "index.html": "/pitcha-pie/index.html",
     "static/css/main.64847b91.chunk.css.map": "/pitcha-pie/static/css/main.64847b91.chunk.css.map",
     "static/js/2.7ba07a31.chunk.js.LICENSE.txt": "/pitcha-pie/static/js/2.7ba07a31.chunk.js.LICENSE.txt",
-    "static/media/avatar.32be0108.jpg": "/pitcha-pie/static/media/avatar.32be0108.jpg",
-    "static/media/backapp-1.d3b6067c.jpg": "/pitcha-pie/static/media/backapp-1.d3b6067c.jpg",
-    "static/media/chat-1.3bbf9a4e.jpg": "/pitcha-pie/static/media/chat-1.3bbf9a4e.jpg",
-    "static/media/cue-1.1523c143.jpg": "/pitcha-pie/static/media/cue-1.1523c143.jpg",
-    "static/media/cue-2.d4ea8a42.jpg": "/pitcha-pie/static/media/cue-2.d4ea8a42.jpg",
-    "static/media/cue-3.ffc88ae9.jpg": "/pitcha-pie/static/media/cue-3.ffc88ae9.jpg",
-    "static/media/leaflet-1.6ad115b4.jpg": "/pitcha-pie/static/media/leaflet-1.6ad115b4.jpg",
-    "static/media/port2-1.6701d899.jpg": "/pitcha-pie/static/media/port2-1.6701d899.jpg",
-    "static/media/port2-2.1c130655.jpg": "/pitcha-pie/static/media/port2-2.1c130655.jpg",
-    "static/media/port2-3.4d7b52ec.jpg": "/pitcha-pie/static/media/port2-3.4d7b52ec.jpg",
-    "static/media/todo-1.ad7346b4.jpg": "/pitcha-pie/static/media/todo-1.ad7346b4.jpg",
-    "static/media/todo-2.0c21c9d9.jpg": "/pitcha-pie/static/media/todo-2.0c21c9d9.jpg",
-    "static/media/todo-3.348d7313.jpg": "/pitcha-pie/static/media/todo-3.348d7313.jpg",
-    "static/media/todo-4.8e68589d.jpg": "/pitcha-pie/static/media/todo-4.8e68589d.jpg",
-    "static/media/water-1.29e05ecd.jpg": "/pitcha-pie/static/media/water-1.29e05ecd.jpg",
-    "static/media/water-2.b56e2406.jpg": "/pitcha-pie/static/media/water-2.b56e2406.jpg",
-    "static/media/water-3.b6e13e23.jpg": "/pitcha-pie/static/media/water-3.b6e13e23.jpg",
-    "static/media/water-4.22480a2d.jpg": "/pitcha-pie/static/media/water-4.22480a2d.jpg",
-    "static/media/water-5.e2023894.jpg": "/pitcha-pie/static/media/water-5.e2023894.jpg"
+    "static/media/avatar.32be0108.jpg": "/pitcha-pie/static/media/avatar.32be0108.jpg"
   },
   "entrypoints": [
     "static/js/runtime-main.a7b4d4d2.js",
     "static/js/2.7ba07a31.chunk.js",
     "static/css/main.64847b91.chunk.css",
-    "static/js/main.6b4ec11e.chunk.js"
+    "static/js/main.7b3935c3.chunk.js"
   ]
 }
