@@ -22,6 +22,7 @@ export const Gallery = (props) => {
       selected: project,
       showDetails: true
     });
+    galleryRef.current.scrollIntoView({behavior: "smooth"});
   };
 
   function backToGallery() {
@@ -29,6 +30,7 @@ export const Gallery = (props) => {
       selected: {},
       showDetails: false
     });
+    galleryRef.current.scrollIntoView({behavior: "smooth"});
   };
 
   const styleHeight = {
@@ -36,10 +38,10 @@ export const Gallery = (props) => {
     width: "100vw"
   }
 
-  useEffect(() => {
-    galleryRef.current.scrollIntoView({behavior: "smooth"})
-    // if (galleryRef.current !== null)
-  }, [state])
+  // useEffect(() => {
+  //   galleryRef.current.scrollIntoView({behavior: "smooth"})
+  //   // if (galleryRef.current !== null)
+  // }, [state])
 
   return (
     <>
