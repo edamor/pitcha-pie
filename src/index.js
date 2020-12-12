@@ -1,6 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
+import './globalStyle/index.css';
+// import './globalStyle/bootstrap-grid.css';
+import './globalStyle/colors.css';
+import './globalStyle/fonts.css';
+import './globalStyle/reference.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 

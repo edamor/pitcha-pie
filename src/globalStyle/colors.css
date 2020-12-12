@@ -1,0 +1,83 @@
+
+
+/* BACKGROUND COLORS */
+/*
+  landing:            #252934
+  nav:                #1B242F
+  nav-underline:      #04C2C9
+  about:              #FFFFFF
+  about-accent-1:     #04C2C9
+  projects:           #F5F5F5
+  projects-accent-1:  #E31C6E
+  blog:               #FFFFFF
+  contact:            #252934
+  contact-accent-1:   #1E242C
+  footer:             #1B242F
+  footer-accent-1:    #262F38
+*/
+
+/* FONT COLORS */
+/* 
+  landing-white:      #FFFFFF
+  landing-accent:     #E31B6D
+  nav:                #FFFFFF
+  nav-active:         #E31B6D
+  about-header:       #444649
+  about-subheader:    #616161
+  about-body:         #616161
+  about-accent-1:     #009ADA
+  about-sec:          #FFFFFF
+*/
+
+
+.bg-landing {
+  background-color: #252934;
+}
+.bg-nav {
+  background-color: #1B242F;
+  border-bottom: 3px solid #04c2c9;
+}
+.bg-about {
+  background-color: #FFFFFF;
+}
+.bg-projects {
+  background-color: #F5F5F5;
+}
+.bg-contact {
+  background-color: #252934;
+}
+.bg-footer {
+  background-color: #1B242F;
+}
+.bg-accent-pink {
+  background-color: #E31B6D;
+}
+.bg-accent-aqua {
+  background-color: #04C2C9;
+}
+
+
+.text-white {
+  color: #FFFFFF;
+}
+.text-pink {
+  color: #E31B6D;
+}
+.text-gray-head {
+  color: #444649;
+}
+.text-gray-body {
+  color: #616161;
+}
+.text-aqua {
+  color: #04C2C9;
+}
+
+
+.text-uppercase {
+  text-transform: uppercase;
+}
+.text-lowercase {
+  text-transform: lowercase;
+}
+
