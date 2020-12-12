@@ -38,14 +38,10 @@ export const Gallery = (props) => {
     width: "100vw"
   }
 
-  // useEffect(() => {
-  //   galleryRef.current.scrollIntoView({behavior: "smooth"})
-  //   // if (galleryRef.current !== null)
-  // }, [state])
-
+  
   return (
     <>
-    <div style={styleHeight} ref={galleryRef}>
+    <div id="myGallery" style={styleHeight} ref={galleryRef}>
       
       <AnimatePresence exitBeforeEnter >
         {

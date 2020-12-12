@@ -6,7 +6,11 @@ export const Footer = () => {
 
   return (
     <footer className="bg-footer">
-      <i className="mdi mdi-chevron-double-up page-link" dest="home"></i>
+      <span>
+        <a href="#home">
+          <i className="mdi mdi-chevron-double-up page-link" dest="home"></i>
+        </a>
+      </span>
 
       <div className="icon-wrap flex row">
         <a href="https://www.linkedin.com/in/ed-louise-amor-577a99196/">

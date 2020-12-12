@@ -9,16 +9,24 @@ export const Nav = (props) => {
     <nav className="flex">
       <div className="link-wrap">
         <div className="link-item">
-          Home
+          <a href="#home">
+            Home
+          </a>
         </div>
         <div className="link-item">
-          About
+          <a href="#about">
+            About
+          </a>
         </div>
         <div className="link-item">
-          Projects
+          <a href="#myGallery">
+            Projects
+          </a>
         </div>
         <div className="link-item">
-          Contact
+          <a href="#contact">
+            Contact
+          </a>
         </div>
       </div>
     </nav>

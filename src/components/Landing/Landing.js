@@ -14,8 +14,10 @@ export const Landing = () => {
           I'm a full-stack web developer.
         </div>
         <div className="button">
-          View my work
-          <i className="mdi mdi-arrow-right"></i>
+          <a href="#myGallery" >
+            View my work
+            <i className="mdi mdi-arrow-right"></i>
+          </a>
         </div>
         <Nav />
       </div>
