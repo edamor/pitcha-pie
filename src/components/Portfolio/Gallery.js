@@ -37,8 +37,8 @@ export const Gallery = (props) => {
   }
 
   useEffect(() => {
-    if (galleryRef.current !== null)
-      galleryRef.current.scrollIntoView({behavior: "smooth"})
+    galleryRef.current.scrollIntoView({behavior: "smooth"})
+    // if (galleryRef.current !== null)
   }, [state])
 
   return (
