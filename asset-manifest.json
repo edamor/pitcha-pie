@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/pitcha-pie/static/css/main.64847b91.chunk.css",
-    "main.js": "/pitcha-pie/static/js/main.0be5cc4b.chunk.js",
-    "main.js.map": "/pitcha-pie/static/js/main.0be5cc4b.chunk.js.map",
+    "main.css": "/pitcha-pie/static/css/main.238052ff.chunk.css",
+    "main.js": "/pitcha-pie/static/js/main.3246e528.chunk.js",
+    "main.js.map": "/pitcha-pie/static/js/main.3246e528.chunk.js.map",
     "runtime-main.js": "/pitcha-pie/static/js/runtime-main.a7b4d4d2.js",
     "runtime-main.js.map": "/pitcha-pie/static/js/runtime-main.a7b4d4d2.js.map",
     "static/js/2.7ba07a31.chunk.js": "/pitcha-pie/static/js/2.7ba07a31.chunk.js",
@@ -10,14 +10,14 @@
     "static/js/3.97c95c7f.chunk.js": "/pitcha-pie/static/js/3.97c95c7f.chunk.js",
     "static/js/3.97c95c7f.chunk.js.map": "/pitcha-pie/static/js/3.97c95c7f.chunk.js.map",
     "index.html": "/pitcha-pie/index.html",
-    "static/css/main.64847b91.chunk.css.map": "/pitcha-pie/static/css/main.64847b91.chunk.css.map",
+    "static/css/main.238052ff.chunk.css.map": "/pitcha-pie/static/css/main.238052ff.chunk.css.map",
     "static/js/2.7ba07a31.chunk.js.LICENSE.txt": "/pitcha-pie/static/js/2.7ba07a31.chunk.js.LICENSE.txt",
     "static/media/avatar.32be0108.jpg": "/pitcha-pie/static/media/avatar.32be0108.jpg"
   },
   "entrypoints": [
     "static/js/runtime-main.a7b4d4d2.js",
     "static/js/2.7ba07a31.chunk.js",
-    "static/css/main.64847b91.chunk.css",
-    "static/js/main.0be5cc4b.chunk.js"
+    "static/css/main.238052ff.chunk.css",
+    "static/js/main.3246e528.chunk.js"
   ]
 }
