@@ -1,21 +1,21 @@
 {
   "files": {
-    "main.css": "/pitcha-pie/static/css/main.238052ff.chunk.css",
-    "main.js": "/pitcha-pie/static/js/main.3246e528.chunk.js",
-    "main.js.map": "/pitcha-pie/static/js/main.3246e528.chunk.js.map",
-    "runtime-main.js": "/pitcha-pie/static/js/runtime-main.a7b4d4d2.js",
-    "runtime-main.js.map": "/pitcha-pie/static/js/runtime-main.a7b4d4d2.js.map",
-    "static/js/2.7ba07a31.chunk.js": "/pitcha-pie/static/js/2.7ba07a31.chunk.js",
-    "static/js/2.7ba07a31.chunk.js.map": "/pitcha-pie/static/js/2.7ba07a31.chunk.js.map",
-    "static/js/3.97c95c7f.chunk.js": "/pitcha-pie/static/js/3.97c95c7f.chunk.js",
-    "static/js/3.97c95c7f.chunk.js.map": "/pitcha-pie/static/js/3.97c95c7f.chunk.js.map",
-    "index.html": "/pitcha-pie/index.html",
-    "static/css/main.238052ff.chunk.css.map": "/pitcha-pie/static/css/main.238052ff.chunk.css.map",
-    "static/js/2.7ba07a31.chunk.js.LICENSE.txt": "/pitcha-pie/static/js/2.7ba07a31.chunk.js.LICENSE.txt",
-    "static/media/avatar.32be0108.jpg": "/pitcha-pie/static/media/avatar.32be0108.jpg"
+    "main.css": "/static/css/main.238052ff.chunk.css",
+    "main.js": "/static/js/main.3246e528.chunk.js",
+    "main.js.map": "/static/js/main.3246e528.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.d093e8aa.js",
+    "runtime-main.js.map": "/static/js/runtime-main.d093e8aa.js.map",
+    "static/js/2.7ba07a31.chunk.js": "/static/js/2.7ba07a31.chunk.js",
+    "static/js/2.7ba07a31.chunk.js.map": "/static/js/2.7ba07a31.chunk.js.map",
+    "static/js/3.97c95c7f.chunk.js": "/static/js/3.97c95c7f.chunk.js",
+    "static/js/3.97c95c7f.chunk.js.map": "/static/js/3.97c95c7f.chunk.js.map",
+    "index.html": "/index.html",
+    "static/css/main.238052ff.chunk.css.map": "/static/css/main.238052ff.chunk.css.map",
+    "static/js/2.7ba07a31.chunk.js.LICENSE.txt": "/static/js/2.7ba07a31.chunk.js.LICENSE.txt",
+    "static/media/avatar.32be0108.jpg": "/static/media/avatar.32be0108.jpg"
   },
   "entrypoints": [
-    "static/js/runtime-main.a7b4d4d2.js",
+    "static/js/runtime-main.d093e8aa.js",
     "static/js/2.7ba07a31.chunk.js",
     "static/css/main.238052ff.chunk.css",
     "static/js/main.3246e528.chunk.js"
