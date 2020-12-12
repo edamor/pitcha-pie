@@ -1,5 +1,4 @@
 import { Gallery } from "./Gallery"
-import { PortfolioNav } from "./PortfolioNav"
 
 
 
@@ -11,7 +10,6 @@ export const Portfolio = () => {
         PROJECTS
       </div>
       <div className="header-bar animated slide-in-right" />
-      {/* <PortfolioNav /> */}
       <Gallery />
     </section>
   )

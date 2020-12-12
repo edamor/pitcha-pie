@@ -1,5 +1,5 @@
 import { AnimatePresence, motion } from "framer-motion";
-import { useEffect, useRef, useState } from "react"
+import { useRef, useState } from "react"
 import { ProjectDetails } from "./ProjectDetails";
 import { Projects } from "./Projects"
 
@@ -38,7 +38,7 @@ export const Gallery = (props) => {
     width: "100vw"
   }
 
-  
+
   return (
     <>
     <div id="myGallery" style={styleHeight} ref={galleryRef}>

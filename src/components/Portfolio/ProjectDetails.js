@@ -51,8 +51,26 @@ export const ProjectDetails = (props) => {
         <div
           className="project-footer"
         >
-          <div className="project-button">
-            <i className="mdi mdi-open-in-new"></i>VIEW SITE
+          <div className="project-buttons">
+            <a 
+              href={project?.demoUrl} 
+              target="_blank" 
+              rel="noreferrer noopener"
+              className="project-button"  
+            >
+              <i className="mdi mdi-open-in-new"></i>VIEW SITE
+            </a>
+            {
+              project?.ghUrl !== "" &&
+              <a 
+                href={project?.ghUrl} 
+                target="_blank" 
+                rel="noreferrer noopener"
+                className="github-button"  
+              >
+                <i className="mdi mdi-github"></i>VIEW SOURCE
+              </a>
+            }
           </div>
           <div
             className="project-button-close"

@@ -42,8 +42,8 @@ const projects = [
     id: 3,
     name: "Back(up) App",
     tech: "React JS / Spring / MongoDB",
-    demoUrl: "",
-    ghUrl: "",
+    demoUrl: "https://edamor.github.io/backapp3",
+    ghUrl: "https://github.com/edamor/backapp3",
     images: [
       "https://i.imgur.com/B5QFsEe.jpg"
     ],
@@ -56,8 +56,8 @@ const projects = [
     id: 4,
     name: "World Map w Pins",
     tech: "React JS / Leaflet JS",
-    demoUrl: "",
-    ghUrl: "",
+    demoUrl: "https://edamor.github.io/react-leaflet-1",
+    ghUrl: "https://github.com/edamor/react-leaflet-1",
     images: [
       "https://i.imgur.com/Y2GqIB0.jpg",
       "https://i.imgur.com/ntEsyD4.jpg",
@@ -74,7 +74,7 @@ const projects = [
     id: 5,
     name: "Office Supplies Store",
     tech: "JavaScript / Liquid / Shopify",
-    demoUrl: "",
+    demoUrl: "https://cuemultitrade.com",
     ghUrl: "",
     images: [
       "https://i.imgur.com/a9jEMYS.jpg",
@@ -91,8 +91,8 @@ const projects = [
     id: 6,
     name: "To Do App",
     tech: "React JS / Bootstrap",
-    demoUrl: "",
-    ghUrl: "",
+    demoUrl: "https://edamor.github.io/to-do-app-2",
+    ghUrl: "https://github.com/edamor/to-do-app-2",
     images: [
       "https://i.imgur.com/6y50vsq.jpg",
       "https://i.imgur.com/ewQNGNQ.jpg",
@@ -108,8 +108,8 @@ const projects = [
     id: 7,
     name: "Personal Site v2",
     tech: "React JS / Bootstrap",
-    demoUrl: "",
-    ghUrl: "",
+    demoUrl: "https://edamor.github.io/portfolio2",
+    ghUrl: "https://github.com/edamor/portfolio2",
     images: [
       "https://i.imgur.com/OSU5o14.jpg",
       "https://i.imgur.com/zdYueHY.jpg",
