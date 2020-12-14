@@ -263,7 +263,7 @@ nav {
   height: 50px;
   text-align: left;
   width: 100%;
-  z-index: 99;
+  z-index: 9999999;
 }
 nav.fixed {
   bottom: inherit;

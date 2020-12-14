@@ -10,6 +10,8 @@ import { Projects } from "./Projects"
 
 export const Gallery = (props) => {
 
+  const { inView } = props;
+
   const galleryRef = useRef(null);
 
   const [state, setState] = useState({
@@ -67,6 +69,7 @@ export const Gallery = (props) => {
           >
             <Projects 
               selectProject={selectProject}
+              inView={inView}
             />
           </motion.div>
         }

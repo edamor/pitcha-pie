@@ -1,18 +1,55 @@
+import { motion, useAnimation } from "framer-motion";
+import { useEffect } from "react";
+import { useInView } from "react-intersection-observer";
 
+
+const variants = {
+  visible: {
+    opacity: 1,
+    scale: 1,
+    transition: {
+      duration: 0.3
+    }
+  },
+  hidden: {
+    opacity: 0,
+    scale: 0,
+    transition: {
+      duration: 0.15
+    }
+  }
+}
 
 export const Footer = () => {
 
+  const controls = useAnimation();
 
+  const [ref, inView] = useInView({threshold: 0.3});
+
+  
+  useEffect(() => {
+    if (inView) {
+      controls.start("visible")
+    } else {
+      controls.start("hidden")
+    }
+    
+  }, [controls, inView])
 
   return (
-    <footer className="bg-footer">
+    <footer className="bg-footer" ref={ref}>
       <span>
         <a href="#home">
           <i className="mdi mdi-chevron-double-up page-link" dest="home"></i>
         </a>
       </span>
 
-      <div className="icon-wrap flex row">
+      <motion.div 
+        className="icon-wrap flex row"
+        initial="hidden"
+        animate={controls}
+        variants={variants}
+      >
         <a href="https://www.linkedin.com/in/ed-louise-amor-577a99196/">
           <div className="flex icon" title="LinkedIn" id="icon-2" >
             <i className="mdi mdi-linkedin"></i>
@@ -38,7 +75,7 @@ export const Footer = () => {
             <i className="mdi mdi-codepen"></i>
           </div>
         </a>
-      </div>
+      </motion.div>
       <div className="info-box">
         <div className="footnote">
           ED LOUISE AMOR <span className="highlight">© {(new Date()).getFullYear()} </span>

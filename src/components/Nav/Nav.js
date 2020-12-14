@@ -7,10 +7,17 @@ export const Nav = (props) => {
   const [showMenu, setShowMenu] = useState(false);
   const mobileNav = (window.innerWidth < 700);
 
+  const style = {
+    maxWidth: "100vw"
+  }
+
 
   return (
-    <nav className={`d-flex align-items-center justify-content-center ${mobileNav ? "fixed" : "desk"}`}>
-      <div className={`link-wrap ${showMenu && "visible"}`}>
+    <nav 
+      className={`d-flex align-items-center justify-content-center ${mobileNav ? "fixed" : "desk"}`}
+      style={mobileNav ? style: {}}
+    >
+      <div className={`link-wrap ${showMenu ? "visible" : ""}`}>
         <div className="link-item">
           <a href="#home">
             Home

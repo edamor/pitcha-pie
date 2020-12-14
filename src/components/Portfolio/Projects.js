@@ -1,3 +1,5 @@
+import { motion, useAnimation } from "framer-motion";
+import { useEffect } from "react";
 
 
 
@@ -123,14 +125,46 @@ const projects = [
 ];
 
 
-export const Projects = (props) => {
-  const { selectProject } = props;
+const variants = {
+  visible: {
+    opacity: 1,
+    scale: 1,
+    transition: {
+      duration: 0.15
+    }
+  },
+  hidden: {
+    opacity: 0,
+    scale: 0,
+    transition: {
+      duration: 0.15
+    }
+  }
+}
 
-  return projects && projects.map(item => (
-    <div 
+
+export const Projects = (props) => {
+  const { selectProject, inView } = props;
+
+  const controls = useAnimation();
+  useEffect(() => {
+    if (inView) {
+      controls.start("visible")
+    } else {
+      controls.start("hidden")
+    }
+    
+  }, [controls, inView])
+  
+
+  return projects && projects.map((item) => (
+    <motion.div 
       key={item.id} 
       className="mix react" 
       style={{ display: "inline-block" }}
+      initial="hidden"
+      animate={controls}
+      variants={variants}
     >
       <div>
         <div className="card">
@@ -165,7 +199,7 @@ export const Projects = (props) => {
           LEARN MORE
         </div>
       </div>
-    </div>
+    </motion.div>
 
   ))
 }
