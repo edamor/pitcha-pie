@@ -38,11 +38,11 @@ export const Footer = () => {
 
   return (
     <footer className="bg-footer" ref={ref}>
-      <span>
-        <a href="#home">
-          <i className="mdi mdi-chevron-double-up page-link" dest="home"></i>
-        </a>
-      </span>
+      
+          <i 
+            className="mdi mdi-chevron-double-up page-link"
+            onClick={() => {window.scrollTo({top: 0})}}
+          ></i>
 
       <motion.div 
         className="icon-wrap flex row"

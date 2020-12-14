@@ -1,6 +1,7 @@
 import { motion, useAnimation } from "framer-motion";
 import { useEffect } from "react";
 import { useInView } from "react-intersection-observer";
+import { useNavContext } from "../../contexts/NavContext/NavContext";
 import { Gallery } from "./Gallery"
 
 
@@ -23,6 +24,8 @@ const variants = {
 
 export const Portfolio = () => {
 
+  const { portfolioRef } = useNavContext();
+
   const controls = useAnimation();
 
   const [ref, inView] = useInView();
@@ -38,22 +41,25 @@ export const Portfolio = () => {
   }, [controls, inView])
 
   return (
-    <section className="flex" id="portfolio" ref={ref}>
-      <motion.div 
-        className="header"
-        initial="hidden"
-        animate={controls}
-        variants={variants}
-      >
-        PROJECTS
-      </motion.div>
-      <motion.div 
-        className="header-bar" 
-        initial="hidden"
-        animate={controls}
-        variants={variants}
-      />
-      <Gallery inView={inView} />
+    <section className="flex" id="portfolio" ref={portfolioRef} >
+      <div ref={ref}>
+        <motion.div 
+          className="header"
+          initial="hidden"
+          animate={controls}
+          variants={variants}
+        >
+          PROJECTS
+        </motion.div>
+        <motion.div 
+          className="header-bar"
+          style={{ marginLeft: "auto", marginRight: "auto" }}
+          initial="hidden"
+          animate={controls}
+          variants={variants}
+        />
+        <Gallery inView={inView} />
+      </div>
     </section>
   )
 }

@@ -264,6 +264,9 @@ nav {
   text-align: left;
   width: 100%;
   z-index: 9999999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 nav.fixed {
   bottom: inherit;

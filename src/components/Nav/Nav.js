@@ -1,15 +1,39 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { useNavContext } from "../../contexts/NavContext/NavContext";
 
 
 
 export const Nav = (props) => {
+
+  const { landingRef, aboutRef, portfolioRef, contactRef } = useNavContext();
+
+  const [elTops, setElTops] = useState({});
+
+  useEffect(() => {
+    if (landingRef.current !== null && aboutRef.current !== null
+      && portfolioRef.current !== null && contactRef.current !== null) {
+      setElTops({
+        landingTop: landingRef.current.getBoundingClientRect().top,
+        aboutTop: aboutRef.current.getBoundingClientRect().top,
+        portfolioTop: portfolioRef.current.getBoundingClientRect().top,
+        contactTop: contactRef.current.getBoundingClientRect().top,
+      })
+    }
+  }, [landingRef, aboutRef, portfolioRef, contactRef])
 
   const [showMenu, setShowMenu] = useState(false);
   const mobileNav = (window.innerWidth < 700);
 
   const style = {
     maxWidth: "100vw"
+  };
+
+
+  function scrollTo(el) {
+    window.scrollTo({top: el})
   }
+
+
 
 
   return (
@@ -18,25 +42,37 @@ export const Nav = (props) => {
       style={mobileNav ? style: {}}
     >
       <div className={`link-wrap ${showMenu ? "visible" : ""}`}>
-        <div className="link-item">
-          <a href="#home">
+        <div 
+          className="link-item"
+          onClick={() => scrollTo(elTops.landingTop)}
+        >
+          <span>
             Home
-          </a>
+          </span>
         </div>
-        <div className="link-item">
-          <a href="#about">
+        <div 
+          className="link-item"
+          onClick={() => scrollTo(elTops.aboutTop)}
+        >
+          <span>
             About
-          </a>
+          </span>
         </div>
-        <div className="link-item">
-          <a href="#myGallery">
+        <div 
+          className="link-item"
+          onClick={() => scrollTo(elTops.portfolioTop)}
+        >
+          <span>
             Projects
-          </a>
+          </span>
         </div>
-        <div className="link-item">
-          <a href="#contact">
+        <div 
+          className="link-item"
+          onClick={() => scrollTo(elTops.contactTop)}
+        >
+          <span>
             Contact
-          </a>
+          </span>
         </div>
       </div>
       <i className="mdi mdi-menu" onClick={() => {setShowMenu(!showMenu)}}></i>
