@@ -81,9 +81,21 @@ section {
   color: #fff;
 }
 
+/* #portfolio {
+  height: fit-content;
+} */
+
+#gallery {
+  row-gap: 0.5rem;
+}
 
 .hexagon-text {
-  font-size: 0.8rem;
+  font-size: 0.75rem;
+  /* text-overflow: clip; */
+  padding: 0;
+  /* text-align: justify; */
+  width: fit-content;
+  /* background-color: #c4efab; */
 }
 
 
@@ -197,3 +209,28 @@ section {
   background: #fff;
   color: #00a1a7;
 }
+
+
+.text-bold {
+  font-weight: 700;
+}
+
+
+@media screen and (max-width: 750px) {
+  .project-footer {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    /* justify-content: space-between; */
+    justify-content: center;
+    align-items: center;
+  }
+  .project-buttons {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    row-gap: 0.2rem;
+  }
+} 

@@ -34,7 +34,7 @@ export const Gallery = (props) => {
   };
 
   const styleHeight = {
-    height: "60rem",
+    height: (window.innerWidth < 600 ? "100%":"60rem"),
     width: "100vw"
   }
 
