@@ -54,6 +54,14 @@ export const Skills = () => {
           </div>
         </div>
         <div className="bar flex">
+          <div className="tag bold badge-name-only">MySql</div>
+          {/* <div className="badge-icon"></div> */}
+        </div>
+        <div className="bar flex">
+          <div className="tag bold badge-name-only">MongoDB</div>
+          {/* <div className="badge-icon"></div> */}
+        </div>
+        <div className="bar flex">
           <div className="tag bold badge-name-only">Node.js</div>
           {/* <div className="badge-icon"></div> */}
         </div>
