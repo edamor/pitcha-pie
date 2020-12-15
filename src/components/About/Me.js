@@ -23,7 +23,7 @@ export const Me = () => {
           The backend for my projects are all developed using Spring. Spring is a framework and an IOC container for the Java platform. It aids me by handling the configurations required to build and run a web app. 
         </p>
         <p>
-          I am young, passionate, and hungry to learn more. Get in touch to find out more.
+          I am young, passionate, and hungry to learn more. <a href="mailto:amor.edlouise@gmail.com?subject=INQUIRY">Get in touch</a> to find out more.
         </p>
       </div>
     </div>

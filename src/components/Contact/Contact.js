@@ -64,13 +64,15 @@ export const Contact = () => {
             <input placeholder="Name" type="text" name="name" required="" />
             <input placeholder="Enter email" type="email" name="email" required="" />
             <textarea placeholder="Your Message" type="text" name="message"></textarea>
-            <div id="success">
+            {/* <div id="success">
               <div>
                 Your message was sent successfully. Thanks!<span id="close" className="mdi mdi-close"></span>
               </div>
-            </div>
+            </div> */}
             <button className="button" type="button" id="submit" >
-              SUBMIT
+              <a href="mailto:amor.edlouise@gmail.com?subject=INQUIRY">
+                SUBMIT
+              </a>
             </button>
           </form>
         </motion.div>
