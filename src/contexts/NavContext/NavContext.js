@@ -1,4 +1,4 @@
-import { createContext, useContext, useRef } from "react";
+import { createContext, useContext, useRef, useState } from "react";
 
 
 export const NavContext = createContext(null);
@@ -10,10 +10,14 @@ export const NavContextProvider = ({children}) => {
   const portfolioRef = useRef(null); 
   const contactRef = useRef(null); 
 
+  const [activeNav, setActiveNav] = useState({
+    navHome: true
+  })
+
 
 
   return (
-    <NavContext.Provider value={{landingRef, aboutRef, portfolioRef, contactRef}}>
+    <NavContext.Provider value={{landingRef, aboutRef, portfolioRef, contactRef, activeNav, setActiveNav}}>
       {children}
     </NavContext.Provider>
   )

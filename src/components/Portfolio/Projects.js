@@ -160,7 +160,7 @@ export const Projects = (props) => {
   return projects && projects.map((item) => (
     <motion.div 
       key={item.id} 
-      className="mix react" 
+      className="mix react margin-4" 
       style={{ display: "inline-block" }}
       initial="hidden"
       animate={controls}

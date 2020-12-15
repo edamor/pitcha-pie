@@ -24,7 +24,7 @@ const variants = {
 
 export const Portfolio = () => {
 
-  const { portfolioRef } = useNavContext();
+  const { portfolioRef, setActiveNav } = useNavContext();
 
   const controls = useAnimation();
 
@@ -33,12 +33,15 @@ export const Portfolio = () => {
   
   useEffect(() => {
     if (inView) {
+      setActiveNav({
+        navPortfolio: true
+      })
       controls.start("visible")
     } else {
       controls.start("hidden")
     }
     
-  }, [controls, inView])
+  }, [controls, inView, setActiveNav])
 
   return (
     <section className="flex" id="portfolio" ref={portfolioRef} >

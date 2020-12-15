@@ -26,7 +26,7 @@ const variants = {
 
 export const About = () => {
 
-  const { aboutRef } = useNavContext();
+  const { aboutRef, setActiveNav } = useNavContext();
 
   const controls = useAnimation();
 
@@ -35,12 +35,15 @@ export const About = () => {
   
   useEffect(() => {
     if (inView) {
+      setActiveNav({
+        navAbout: true
+      })
       controls.start("visible")
     } else {
       controls.start("hidden")
     }
     
-  }, [controls, inView])
+  }, [controls, inView, setActiveNav])
 
   return (
     <section id="about" className="about-page" ref={aboutRef} >

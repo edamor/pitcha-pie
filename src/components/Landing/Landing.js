@@ -13,10 +13,10 @@ export const Landing = () => {
   }
 
   return (
-    <section id="home" className="landing-page bg-landing flex" ref={landingRef}>
+    <section id="home" className="landing-page bg-landing flex" ref={landingRef} >
       <div className="flex">
         <div className="text">
-          Hello, I'm <span className="highlight">Ed Louise Amor</span>
+          Hello, I'm <span className="highlight">Ed Louise Amor</span>.
           <br />
           I'm a full-stack web developer.
         </div>
@@ -26,7 +26,7 @@ export const Landing = () => {
             <i className="mdi mdi-arrow-right"></i>
           </span>
         </div>
-        <Nav />
+        
       </div>
     </section>
   )

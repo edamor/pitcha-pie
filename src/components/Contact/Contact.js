@@ -24,7 +24,7 @@ const variants = {
 
 export const Contact = () => {
 
-  const { contactRef } = useNavContext();
+  const { contactRef, setActiveNav } = useNavContext();
 
   const controls = useAnimation();
 
@@ -33,12 +33,15 @@ export const Contact = () => {
   
   useEffect(() => {
     if (inView) {
+      setActiveNav({
+        navContacts: true
+      })
       controls.start("visible")
     } else {
       controls.start("hidden")
     }
     
-  }, [controls, inView])
+  }, [controls, inView, setActiveNav])
 
 
   return (

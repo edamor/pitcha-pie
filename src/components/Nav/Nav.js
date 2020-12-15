@@ -1,81 +1,120 @@
-import { useEffect, useState } from "react";
+import { motion, useTransform, useViewportScroll } from "framer-motion";
+import { useRef, useState } from "react";
+// import { useInView } from "react-intersection-observer";
 import { useNavContext } from "../../contexts/NavContext/NavContext";
+import { useBoundingClientRect } from "./useBoundingClientRect";
+
+
+const variants = {
+  active: {
+    color: "#E31B6D",
+    fontWeight: 500
+  },
+  inActive: {
+    color: "#FFFFFF"
+  }
+};
 
 
 
-export const Nav = (props) => {
 
-  const { landingRef, aboutRef, portfolioRef, contactRef } = useNavContext();
 
-  const [elTops, setElTops] = useState({});
+export const Nav = () => {
 
-  useEffect(() => {
-    if (landingRef.current !== null && aboutRef.current !== null
-      && portfolioRef.current !== null && contactRef.current !== null) {
-      setElTops({
-        landingTop: landingRef.current.getBoundingClientRect().top,
-        aboutTop: aboutRef.current.getBoundingClientRect().top,
-        portfolioTop: portfolioRef.current.getBoundingClientRect().top,
-        contactTop: contactRef.current.getBoundingClientRect().top,
-      })
-    }
-  }, [landingRef, aboutRef, portfolioRef, contactRef])
+  const navRef = useRef(null);
+
+  const { landingRef, aboutRef, portfolioRef, contactRef, activeNav } = useNavContext();
+
+  const { landing, about, portfolio, contact } = useBoundingClientRect(
+    { landingRef, aboutRef, portfolioRef, contactRef }
+  );
 
   const [showMenu, setShowMenu] = useState(false);
-  const mobileNav = (window.innerWidth < 700);
 
   const style = {
-    maxWidth: "100vw"
+    maxWidth: "100vw",
+    position: "absolute"
   };
-
+console.log(landing?.y);
 
   function scrollTo(el) {
     window.scrollTo({top: el})
   }
 
+  const { scrollY } = useViewportScroll();
+
+  const y = useTransform(scrollY, l => (l-(landing?.height + 50)))
 
 
 
   return (
-    <nav 
-      className={`d-flex align-items-center justify-content-center ${mobileNav ? "fixed" : "desk"}`}
-      style={mobileNav ? style: {}}
+    <>
+    {/* <div style={{ position: "relative" }} >
+    </div> */}
+    <motion.nav 
+      className={`d-flex align-items-center justify-content-center `}
+      // style={mobileNav ? style: {}}
+      // style={style}
+      style={{
+        y
+      }}
+      transition={{
+        ease: 0.1
+      }}
+      // ref={ref}
+      // initial={{
+      //   top: landing?.height
+      // }}
+      // animate={{
+      //   top: top
+      // }}
+      
     >
       <div className={`link-wrap ${showMenu ? "visible" : ""}`}>
-        <div 
+        <motion.div 
           className="link-item"
-          onClick={() => scrollTo(elTops.landingTop)}
+          onClick={() => scrollTo(landing.top)}
+          animate={`${activeNav.navHome ? "active" : "inActive"}`}
+          variants={variants}
         >
           <span>
             Home
           </span>
-        </div>
-        <div 
+        </motion.div>
+        <motion.div 
           className="link-item"
-          onClick={() => scrollTo(elTops.aboutTop)}
+          onClick={() => scrollTo(about.top)}
+          animate={`${activeNav.navAbout ? "active" : "inActive"}`}
+          variants={variants}
         >
           <span>
             About
           </span>
-        </div>
-        <div 
+        </motion.div>
+        <motion.div 
           className="link-item"
-          onClick={() => scrollTo(elTops.portfolioTop)}
+          onClick={() => scrollTo(portfolio.top)}
+          animate={`${activeNav.navPortfolio ? "active" : "inActive"}`}
+          variants={variants}
         >
           <span>
             Projects
           </span>
-        </div>
-        <div 
+        </motion.div>
+        <motion.div 
           className="link-item"
-          onClick={() => scrollTo(elTops.contactTop)}
+          onClick={() => scrollTo(contact.top)}
+          animate={`${activeNav.navContacts ? "active" : "inActive"}`}
+          variants={variants}
         >
           <span>
             Contact
           </span>
-        </div>
+        </motion.div>
       </div>
       <i className="mdi mdi-menu" onClick={() => {setShowMenu(!showMenu)}}></i>
-    </nav>
+    </motion.nav>
+    
+    </>
   )
 }

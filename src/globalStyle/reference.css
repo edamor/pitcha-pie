@@ -255,7 +255,7 @@ a {
 }
 
 nav {
-  bottom: 0;
+  /* bottom: 0; */
   left: 0;
   position: absolute;
   background: #1b242f;
@@ -275,6 +275,13 @@ nav.fixed {
   top: 0;
   height: 3.2rem;
 }
+
+nav.sticky {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+}
+
 nav.fixed.desk {
   animation: popDown 0.5s;
 }

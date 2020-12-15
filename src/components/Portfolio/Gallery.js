@@ -74,14 +74,6 @@ export const Gallery = (props) => {
           </motion.div>
         }
       </AnimatePresence>
-      {/* <div
-        id="gallery" 
-        className="container flex row wrap animated" 
-      >
-        <Projects    
-          selectProject={selectProject}
-        />
-      </div> */}
       <AnimatePresence exitBeforeEnter initial={false}>
         {
           state.showDetails && <motion.div 
