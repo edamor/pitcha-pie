@@ -17,7 +17,7 @@ export const Me = () => {
           I'm a full-stack developer based in Metro Manila, PH.
         </p>
         <p>
-          Majority of my frontend projects were developed using React. Through my journey, I learned how to develop custom hooks, context API for state management, and other React-based APIs. I can tell you more of my story by sending me an email. 
+          Majority of my frontend projects were developed using React. Through my journey, I learned how to develop custom hooks, context API for state management, and more React-based APIs. I also have experience in TypeScript and Angular development. 
         </p>
         <p>
           The backend for my projects are all developed using Spring. Spring is a framework and an IOC container for the Java platform. It aids me by handling the configurations required to build and run a web app. 
