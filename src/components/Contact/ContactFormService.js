@@ -4,7 +4,7 @@
 
 
 export const doSubmitContactForm = async (message) => {
-  const HEROKU = "https://chimp-red-2020.herokuapp.com/";
+  const HEROKU = "https://chimp-red-2020.herokuapp.com";
   const ENDPOINT = "/submit-contact";
   let response, data;
 
