@@ -215,6 +215,46 @@ section {
   font-weight: 700;
 }
 
+.toast {
+  /* height: 0; */
+  overflow: hidden;
+  /* position: relative; */
+  /* transition: height 0.25s; */
+  width: 100%;
+}
+
+.toast div {
+  font-size: 10pt;
+  font-weight: 600;
+  padding: 5px 0;
+  display: block;
+  transition: ease;
+}
+
+.toast-expand {
+  /* height: 36px; */
+}
+
+.toast-error {
+  background: #db3d21;
+  border: 1px solid #7c1515;
+  color: #701515;
+}
+.toast-success {
+  background: #19996e;
+  border: 1px solid #157c59;
+  color: #157051;
+}
+
+.toast-close {
+  cursor: pointer;
+  font-size: 12pt;
+  font-weight: 600;
+  padding: 5px 15px;
+  position: absolute;
+  right: 0;
+}
+
 
 @media screen and (max-width: 750px) {
   .project-footer {

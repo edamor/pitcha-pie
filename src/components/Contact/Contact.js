@@ -2,6 +2,7 @@ import { motion, useAnimation } from "framer-motion";
 import { useEffect } from "react";
 import { useInView } from "react-intersection-observer";
 import { useNavContext } from "../../contexts/NavContext/NavContext";
+import { ContactForm } from "./ContactForm";
 
 const variants = {
   visible: {
@@ -60,21 +61,9 @@ export const Contact = () => {
           <div className="highlight waypoint animated slide-in-right"  data-delay=".5s" style={{animationDelay: "0.5s"}}>
             Have a question or want to work together?
           </div>
-          <form className="waypoint animated pop-in" data-delay=".5s" id="contact-form" style={{animationDelay: "0.5s"}}>
-            <input placeholder="Name" type="text" name="name" required="" />
-            <input placeholder="Enter email" type="email" name="email" required="" />
-            <textarea placeholder="Your Message" type="text" name="message"></textarea>
-            {/* <div id="success">
-              <div>
-                Your message was sent successfully. Thanks!<span id="close" className="mdi mdi-close"></span>
-              </div>
-            </div> */}
-            <button className="button" type="button" id="submit" >
-              <a href="mailto:amor.edlouise@gmail.com?subject=INQUIRY">
-                SUBMIT
-              </a>
-            </button>
-          </form>
+          
+          <ContactForm />
+
         </motion.div>
       </div>
     </section>    
