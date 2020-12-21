@@ -273,10 +273,10 @@ nav.fixed {
   left: 0;
   position: fixed;
   top: 0;
-  height: 3.2rem;
+  /* height: 3.2rem; */
 }
 nav.fixed.desk {
-  animation: popDown 0.5s;
+  /* animation: popDown 0.2s; */
 }
 nav .link-wrap {
   background: #333;
@@ -289,8 +289,8 @@ nav .link-wrap {
   width: 100%;
 }
 nav .link-wrap.visible {
-  /* height: 220px; */
-  height: fit-content;
+  height: 180px;
+  /* height: fit-content; */
   padding-bottom: 0.8rem;
 }
 nav .link-wrap div {
@@ -721,6 +721,7 @@ section:nth-of-type(4) .button:hover {
 }
 section:nth-of-type(4) .button:disabled {
   background: #04c2c9c9;
+  border: 1px solid #04c2c9c9;
   color: grey;
   cursor: wait;
 }

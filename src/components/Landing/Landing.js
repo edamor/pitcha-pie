@@ -8,8 +8,7 @@ export const Landing = () => {
   const { landingRef, portfolioRef } = useNavContext();
 
   function viewProjects() {
-    let top = portfolioRef.current?.getBoundingClientRect().top;
-    window.scrollTo({top: top})
+    portfolioRef.current.scrollIntoView({behavior: "smooth"})
   }
 
   return (

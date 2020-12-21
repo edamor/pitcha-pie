@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { useRef, useState } from "react"
 import { doSubmitContactForm } from "./ContactFormService";
+import CircleLoader from "./Loader";
 
 
 const toastVariants = {
@@ -84,7 +85,7 @@ export const ContactForm = () => {
 
 
   return (
-    <form className="waypoint animated pop-in" data-delay=".5s" id="contact-form" style={{animationDelay: "0.5s"}}>
+    <form className="waypoint animated pop-in" id="contact-form" style={{animationDelay: "0.5s"}}>
       <input 
         placeholder="Name (optional)" 
         type="text" 
@@ -144,26 +145,37 @@ export const ContactForm = () => {
         <motion.div
           style={toastStyles[toastStat.style]}
         >
-          {toastStat.style === 1 ? "Success! I'll be back with a response shortly." : "An error occurred. Review the form and try again."}
-          <span className="mdi mdi-close toast-close" onClick={() => {setToastStat({...toastStat,show: false})}}></span>
+          <span style={{
+            width: "100%",
+            alignSelf: "center"
+          }}>
+            {toastStat.style === 1 ? "Success! I'll be back with a response shortly." : "An error occurred. Review the form and try again."}
+          </span>
+          <span className="mdi mdi-close toast-close" onClick={() => {
+            setToastStat({...toastStat,show: false}); 
+            // setIsLoading(false);
+          }}></span>
         </motion.div>
       </motion.div>
       <button 
         className="button" 
         type="button" 
         id="submit"
-        onClick={submitContactForm} 
+        disabled={isLoading} 
+        onClick={submitContactForm}
         // onClick={() => {setToastStat({
         //   show: !toastStat.show,
         //   style: 1
         // })
         // setIsLoading(!isLoading)
         // }}
-        disabled={isLoading} 
       >
-          SUBMIT
-        {/* <a href="mailto:amor.edlouise@gmail.com?subject=INQUIRY">
-        </a> */}
+        {
+          isLoading ? 
+          <CircleLoader />
+          :
+          <span>SUBMIT</span>
+        }
       </button>
     </form>
   )

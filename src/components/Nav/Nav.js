@@ -1,3 +1,4 @@
+import { useViewportScroll } from "framer-motion";
 import { useEffect, useState } from "react";
 import { useNavContext } from "../../contexts/NavContext/NavContext";
 
@@ -7,44 +8,59 @@ export const Nav = (props) => {
 
   const { landingRef, aboutRef, portfolioRef, contactRef } = useNavContext();
 
-  const [elTops, setElTops] = useState({});
+  // const [elTops, setElTops] = useState({});
 
-  useEffect(() => {
-    if (landingRef.current !== null && aboutRef.current !== null
-      && portfolioRef.current !== null && contactRef.current !== null) {
-      setElTops({
-        landingTop: landingRef.current.getBoundingClientRect().top,
-        aboutTop: aboutRef.current.getBoundingClientRect().top,
-        portfolioTop: portfolioRef.current.getBoundingClientRect().top,
-        contactTop: contactRef.current.getBoundingClientRect().top,
-      })
-    }
-  }, [landingRef, aboutRef, portfolioRef, contactRef])
+  // useEffect(() => {
+  //   if (landingRef.current !== null && aboutRef.current !== null
+  //     && portfolioRef.current !== null && contactRef.current !== null) {
+  //     setElTops({
+  //       landingTop: landingRef.current.getBoundingClientRect().top,
+  //       aboutTop: aboutRef.current.getBoundingClientRect().top,
+  //       portfolioTop: portfolioRef.current.getBoundingClientRect().top,
+  //       contactTop: contactRef.current.getBoundingClientRect().top,
+  //     })
+  //   }
+  // }, [landingRef, aboutRef, portfolioRef, contactRef])
 
   const [showMenu, setShowMenu] = useState(false);
-  const mobileNav = (window.innerWidth < 700);
+
+  const [fixNav, setFixNav] = useState(false);
 
   const style = {
     maxWidth: "100vw"
   };
 
 
-  function scrollTo(el) {
-    window.scrollTo({top: el})
-  }
+
+  const { scrollY } = useViewportScroll();
+
+  useEffect(() => {
+    scrollY.onChange(latest => {
+      if (latest > (landingRef.current?.getBoundingClientRect().height - 50)) {
+        setFixNav(true)
+      } else {
+        setFixNav(false)
+      }
+    })
+  }, [landingRef, scrollY])
+
+
 
 
 
 
   return (
     <nav 
-      className={`d-flex align-items-center justify-content-center ${mobileNav ? "fixed" : "desk"}`}
-      style={mobileNav ? style: {}}
+      className={`d-flex align-items-center justify-content-center desk ${fixNav ? "fixed" : ""}`}
+      style={style}
     >
       <div className={`link-wrap ${showMenu ? "visible" : ""}`}>
         <div 
           className="link-item"
-          onClick={() => scrollTo(elTops.landingTop)}
+          onClick={() => {
+            landingRef.current.scrollIntoView({behavior: "smooth"});
+            setShowMenu(false);
+          }}
         >
           <span>
             Home
@@ -52,7 +68,10 @@ export const Nav = (props) => {
         </div>
         <div 
           className="link-item"
-          onClick={() => scrollTo(elTops.aboutTop)}
+          onClick={() => {
+            aboutRef.current.scrollIntoView({behavior: "smooth"});
+            setShowMenu(false);
+          }}
         >
           <span>
             About
@@ -60,7 +79,10 @@ export const Nav = (props) => {
         </div>
         <div 
           className="link-item"
-          onClick={() => scrollTo(elTops.portfolioTop)}
+          onClick={() => {
+            portfolioRef.current.scrollIntoView({behavior: "smooth"});
+            setShowMenu(false);
+          }}
         >
           <span>
             Projects
@@ -68,7 +90,10 @@ export const Nav = (props) => {
         </div>
         <div 
           className="link-item"
-          onClick={() => scrollTo(elTops.contactTop)}
+          onClick={() => {
+            contactRef.current.scrollIntoView({behavior: "smooth"});
+            setShowMenu(false);
+          }}
         >
           <span>
             Contact

@@ -220,6 +220,8 @@ section {
   overflow: hidden;
   /* position: relative; */
   /* transition: height 0.25s; */
+  align-items: center;
+  display: flex;
   width: 100%;
 }
 
@@ -227,7 +229,9 @@ section {
   font-size: 10pt;
   font-weight: 600;
   padding: 5px 0;
-  display: block;
+  width: 100%;
+  display: flex;
+  /* justify-content: space-evenly; */
   transition: ease;
 }
 
@@ -251,8 +255,9 @@ section {
   font-size: 12pt;
   font-weight: 600;
   padding: 5px 15px;
-  position: absolute;
-  right: 0;
+  margin-left: auto;
+  /* position: absolute; */
+  /* right: 0; */
 }
 
 
