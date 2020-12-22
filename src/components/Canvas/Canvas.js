@@ -17,7 +17,7 @@ export const LandingPageBg = () => {
         particles: {
           color: "#e44185",
           number: {
-            value: 100
+            value: (window.innerWidth < 768 ? 50 : 120)
           },
           size: {
             value: 3
@@ -28,18 +28,24 @@ export const LandingPageBg = () => {
         },
         fpsLimit: 60,
         interactivity: {
+          detectsOn: "canvas",
           events: {
             onhover: {
               enable: true,
-              mode: "repulse"
-            }
+              mode: "bubble"
+            },
+            resize: true
           }
         },
-        modes: {    
-          repulse: {
-            distance: 10
-          },
+        modes: {
+          bubble: {
+            distance: 1,
+            duration: 10,
+            opacity: 0.75,
+            size: 10,
+          }
         },
+        detectRetina: true
     }}/>
   )
 }
