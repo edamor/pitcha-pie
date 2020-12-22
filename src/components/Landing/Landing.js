@@ -1,4 +1,5 @@
 import { useNavContext } from "../../contexts/NavContext/NavContext"
+import { LandingPageBg } from "../Canvas/Canvas";
 import { Nav } from "../Nav/Nav"
 import "./landing.css"
 
@@ -13,6 +14,7 @@ export const Landing = () => {
 
   return (
     <section id="home" className="landing-page bg-landing flex" ref={landingRef}>
+      <LandingPageBg />
       <div className="flex">
         <div className="text">
           Hello, I'm <span className="highlight">Ed Louise Amor</span>

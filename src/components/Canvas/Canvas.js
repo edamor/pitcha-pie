@@ -1,18 +1,45 @@
-import { useRef } from "react"
+import Particles from "react-particles-js"
 
+const style = {
+  position: "absolute",
+  top: 0,
+  left: 0
+}
 
+export const LandingPageBg = () => {
 
-export default function Canvas(props) {
-  
-  const canvasRef = useRef(null);
-
-  useEffect(() => {
-    const canvas = canvasRef.current
-    const context = canvas.getContext('2d')
-    //Our first draw
-    context.fillStyle = '#000000'
-    context.fillRect(0, 0, context.canvas.width, context.canvas.height)
-  }, [])  
-
-  return <canvas ref={canvasRef} {...props} />
+  return (
+    <Particles
+      height="100vh"
+      width="100vw"
+      style={style}
+      params={{
+        particles: {
+          color: "#e44185",
+          number: {
+            value: 100
+          },
+          size: {
+            value: 3
+          },
+          move: {
+            speed: 0.8
+          }
+        },
+        fpsLimit: 60,
+        interactivity: {
+          events: {
+            onhover: {
+              enable: true,
+              mode: "repulse"
+            }
+          }
+        },
+        modes: {    
+          repulse: {
+            distance: 10
+          },
+        },
+    }}/>
+  )
 }
