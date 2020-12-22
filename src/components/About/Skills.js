@@ -1,14 +1,22 @@
+import { useInView } from "react-intersection-observer";
 import { Me } from "./Me"
 
 
 export const Skills = () => {
+
+  const [ref, inView] = useInView({threshold: 0.18});
+
 
   return (
     <div className="skills-wrapper flex row-gt-sm">
       
       <Me />
 
-      <div className="flex flex-50-gt-sm bars-wrap animated slide-in-right">
+      <div
+        ref={ref}
+        className={`flex flex-50-gt-sm bars-wrap waypoint ${inView ? "animated slide-in-right" : ""}`}
+        style={{ animationDelay: "0.3s"}} 
+      >
 
         <div className="bar flex">
           <div className="tag bold badge-name ">HTML/CSS</div>

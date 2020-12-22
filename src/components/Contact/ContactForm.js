@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { useRef, useState } from "react"
+import { useInView } from "react-intersection-observer";
 import { doSubmitContactForm } from "./ContactFormService";
 import CircleLoader from "./Loader";
 
@@ -83,9 +84,17 @@ export const ContactForm = () => {
       })
   };
 
+  
+  const [ref, inView] = useInView({threshold: 0.12});
+
 
   return (
-    <form className="waypoint animated pop-in" id="contact-form" style={{animationDelay: "0.5s"}}>
+    <form
+      ref={ref} 
+      className={`waypoint ${inView ? "animated pop-in" : ""}`} 
+      id="contact-form" 
+      style={{animationDelay: "0.18s"}}
+    >
       <input 
         placeholder="Name (optional)" 
         type="text" 

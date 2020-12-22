@@ -1,11 +1,17 @@
+import { useInView } from "react-intersection-observer";
 import avatar from "./avatar.jpg"
 
 
 export const Me = () => {
 
+  const [ref, inView] = useInView({threshold: 0.18});
 
   return (
-    <div className="flex flex-50-gt-sm animated slide-in-left">
+    <div
+      ref={ref}
+      className={`flex flex-50-gt-sm waypoint ${inView ? "animated slide-in-left" : ""}`}
+      style={{ animationDelay: "0.3s"}}
+    >
       <img
         src={avatar}
         alt="..."

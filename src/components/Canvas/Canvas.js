@@ -16,6 +16,13 @@ export const LandingPageBg = () => {
       params={{
         particles: {
           color: "#e44185",
+          links: {
+            color: "#dfdfdf",
+            distance: 150,
+            enable: true,
+            opacity: 0.35,
+            width: 1,
+          },
           number: {
             value: (window.innerWidth < 768 ? 50 : 120)
           },

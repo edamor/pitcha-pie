@@ -1,5 +1,6 @@
 import { AnimatePresence, motion } from "framer-motion";
-import { useRef, useState } from "react"
+import { useState } from "react"
+import { useNavContext } from "../../contexts/NavContext/NavContext";
 import { ProjectDetails } from "./ProjectDetails";
 import { Projects } from "./Projects"
 
@@ -10,9 +11,7 @@ import { Projects } from "./Projects"
 
 export const Gallery = (props) => {
 
-  const { inView } = props;
-
-  const galleryRef = useRef(null);
+  const { portfolioRef } = useNavContext();
 
   const [state, setState] = useState({
     selected: {},
@@ -24,7 +23,10 @@ export const Gallery = (props) => {
       selected: project,
       showDetails: true
     });
-    galleryRef.current.scrollIntoView({behavior: "smooth"});
+    portfolioRef.current.scrollIntoView({
+      behavior: "smooth",
+      block: "center"
+    });
   };
 
   function backToGallery() {
@@ -32,7 +34,9 @@ export const Gallery = (props) => {
       selected: {},
       showDetails: false
     });
-    galleryRef.current.scrollIntoView({behavior: "smooth"});
+    portfolioRef.current.scrollIntoView({
+      behavior: "smooth"
+    });
   };
 
   const styleHeight = {
@@ -43,63 +47,57 @@ export const Gallery = (props) => {
 
   return (
     <>
-    <div id="myGallery" style={styleHeight} ref={galleryRef}>
+    <div id="myGallery" style={styleHeight} >
       
       <AnimatePresence exitBeforeEnter >
         {
           !state.showDetails && <motion.div 
             id="gallery" 
-            className="container flex row wrap animated"
-            
-            initial={{
-              opacity: 0,
-              scale: 0
-            }}
-            animate={{
-              opacity: 1,
-              scale: 1
-            }}
-            exit={{
-              opacity: 0,
-              scale: 0
-            }}
-            transition={{
-              duration: 0.5
-            }}
-          >
-            <Projects 
-              selectProject={selectProject}
-              inView={inView}
-            />
-          </motion.div>
-        }
-      </AnimatePresence>
-      {/* <div
-        id="gallery" 
-        className="container flex row wrap animated" 
-      >
-        <Projects    
-          selectProject={selectProject}
-        />
-      </div> */}
-      <AnimatePresence exitBeforeEnter initial={false}>
-        {
-          state.showDetails && <motion.div 
-            className="project-details bg-white"
+            className="container flex row wrap"
             
             initial={{
               opacity: 0
             }}
             animate={{
               opacity: 1,
-              scale: 1
+              x: 0
             }}
             exit={{
               opacity: 0,
-              scale: 0
+              x: "-100vw"
             }}
             transition={{
-              duration: 0.8
+              duration: 0.5,
+              ease: "easeInOut"
+            }}
+          >
+            <Projects 
+              selectProject={selectProject}
+            />
+          </motion.div>
+        }
+      </AnimatePresence>
+
+      <AnimatePresence exitBeforeEnter initial={false}>
+        {
+          state.showDetails && <motion.div 
+            className="project-details bg-white"
+            
+            initial={{
+              opacity: 0,
+              x: "100vw"
+            }}
+            animate={{
+              opacity: 1,
+              x: 0
+            }}
+            exit={{
+              opacity: 0,
+              x: "-100vw"
+            }}
+            transition={{
+              duration: 0.5,
+              ease: "easeInOut"
             }}
           >
             <ProjectDetails
