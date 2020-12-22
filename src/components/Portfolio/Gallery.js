@@ -40,7 +40,8 @@ export const Gallery = (props) => {
   };
 
   const styleHeight = {
-    height: (window.innerWidth < 600 ? "100%":"60rem"),
+    // height: (window.innerWidth < 600 ? "100%":"60rem"),
+    height: "100%",
     width: "100vw"
   }
 
