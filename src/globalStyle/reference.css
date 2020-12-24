@@ -691,6 +691,7 @@ section:nth-of-type(4) input[type=email]:disabled,
 section:nth-of-type(4) textarea:disabled {
   background: #343f4d;
   color: rgb(231, 231, 231);
+  cursor: wait;
 }
 section:nth-of-type(4) textarea {
   margin-bottom: 5px;

@@ -74,6 +74,9 @@ export const Footer = () => {
       <div className="info-box">
         <div className="footnote">
           ED LOUISE AMOR <span className="highlight">© {(new Date()).getFullYear()} </span>
+        <div className="footnote">
+          Design inspired by <a href="http://findmatthew.com" target="_blank" rel="noreferrer noopener" className="highlight">findmatthew.com</a> 
+        </div>
         </div>
       </div>
     </footer>    

@@ -1,7 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './globalStyle/index.css';
-// import './globalStyle/bootstrap-grid.css';
 import './globalStyle/colors.css';
 import './globalStyle/fonts.css';
 import './globalStyle/reference.css';
