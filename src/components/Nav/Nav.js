@@ -6,21 +6,7 @@ import { useNavContext } from "../../contexts/NavContext/NavContext";
 
 export const Nav = (props) => {
 
-  const { landingRef, aboutRef, portfolioRef, contactRef } = useNavContext();
-
-  // const [elTops, setElTops] = useState({});
-
-  // useEffect(() => {
-  //   if (landingRef.current !== null && aboutRef.current !== null
-  //     && portfolioRef.current !== null && contactRef.current !== null) {
-  //     setElTops({
-  //       landingTop: landingRef.current.getBoundingClientRect().top,
-  //       aboutTop: aboutRef.current.getBoundingClientRect().top,
-  //       portfolioTop: portfolioRef.current.getBoundingClientRect().top,
-  //       contactTop: contactRef.current.getBoundingClientRect().top,
-  //     })
-  //   }
-  // }, [landingRef, aboutRef, portfolioRef, contactRef])
+  const { landingRef, aboutRef, portfolioRef, contactRef, activeNav } = useNavContext();
 
   const [showMenu, setShowMenu] = useState(false);
 
@@ -48,7 +34,6 @@ export const Nav = (props) => {
 
 
 
-
   return (
     <nav 
       className={`d-flex align-items-center justify-content-center desk ${fixNav ? "fixed" : ""}`}
@@ -56,7 +41,7 @@ export const Nav = (props) => {
     >
       <div className={`link-wrap ${showMenu ? "visible" : ""}`}>
         <div 
-          className="link-item"
+          className={`link-item ${activeNav.navLanding ? "active" : ""}`} 
           onClick={() => {
             landingRef.current.scrollIntoView({behavior: "smooth"});
             setShowMenu(false);
@@ -67,7 +52,7 @@ export const Nav = (props) => {
           </span>
         </div>
         <div 
-          className="link-item"
+          className={`link-item ${activeNav.navAbout ? "active" : ""}`}
           onClick={() => {
             aboutRef.current.scrollIntoView({behavior: "smooth"});
             setShowMenu(false);
@@ -78,7 +63,7 @@ export const Nav = (props) => {
           </span>
         </div>
         <div 
-          className="link-item"
+          className={`link-item ${activeNav.navPortfolio ? "active" : ""}`}
           onClick={() => {
             portfolioRef.current.scrollIntoView({behavior: "smooth"});
             setShowMenu(false);
@@ -89,7 +74,7 @@ export const Nav = (props) => {
           </span>
         </div>
         <div 
-          className="link-item"
+          className={`link-item ${activeNav.navContact ? "active" : ""}`}
           onClick={() => {
             contactRef.current.scrollIntoView({behavior: "smooth"});
             setShowMenu(false);

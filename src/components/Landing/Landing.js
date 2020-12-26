@@ -1,4 +1,6 @@
 import { motion } from "framer-motion";
+import { useEffect } from "react";
+import { useInView } from "react-intersection-observer";
 import { useNavContext } from "../../contexts/NavContext/NavContext"
 import { LandingPageBg } from "../Canvas/Canvas";
 import { Nav } from "../Nav/Nav"
@@ -21,16 +23,35 @@ const textMotion = {
   }
 };
 
+const style = {
+  position: "absolute",
+  top: "25vh",
+  zIndex: -1
+}
+
 export const Landing = () => {
 
-  const { landingRef, portfolioRef } = useNavContext();
+  const { landingRef, portfolioRef, setActiveNav } = useNavContext();
+
+  const [ref, inView] = useInView();
 
   function viewProjects() {
     portfolioRef.current.scrollIntoView({behavior: "smooth"})
-  }
+  };
+
+  useEffect(() => {
+    if (inView) {
+      setActiveNav({
+        navLanding: true
+      })
+    }
+  }, [inView, setActiveNav])
 
   return (
     <section id="home" className="landing-page bg-landing flex" ref={landingRef}>
+      <div ref={ref}
+        style={style}
+      />
       <LandingPageBg />
       <div className="flex">
         <div className="waypoint animated slide-in-left text">

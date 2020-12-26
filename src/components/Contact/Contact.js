@@ -1,17 +1,35 @@
+import { useEffect } from "react";
+import { useInView } from "react-intersection-observer";
 import { useNavContext } from "../../contexts/NavContext/NavContext";
 import { ContactForm } from "./ContactForm";
 import { ContactHeader } from "./ContactHeader";
 import { SubHeader } from "./SubHeader";
 
 
+const style = {
+  position: "absolute",
+  top: "25vh",
+  zIndex: -1
+}
+
 
 export const Contact = () => {
 
-  const { contactRef } = useNavContext();
+  const { contactRef, setActiveNav } = useNavContext();
 
+  const [ref, inView] = useInView();
+
+  useEffect(() => {
+    if (inView) {
+      setActiveNav({
+        navContact: true
+      })
+    }
+  }, [inView, setActiveNav])
 
   return (
     <section id="contact" className=" bg-contact contact-page" ref={contactRef} >
+      <div ref={ref} style={style} />
       <svg 
         preserveAspectRatio="none" 
         viewBox="0 0 100 102" 
