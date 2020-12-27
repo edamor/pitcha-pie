@@ -4,7 +4,7 @@ import { useNavContext } from "../../contexts/NavContext/NavContext";
 
 
 
-export const Nav = (props) => {
+export const Nav = () => {
 
   const { landingRef, aboutRef, portfolioRef, contactRef, activeNav } = useNavContext();
 
@@ -15,8 +15,6 @@ export const Nav = (props) => {
   const style = {
     maxWidth: "100vw"
   };
-
-
 
   const { scrollY } = useViewportScroll();
 
@@ -29,9 +27,6 @@ export const Nav = (props) => {
       }
     })
   }, [landingRef, scrollY])
-
-
-
 
 
   return (
