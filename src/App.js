@@ -1,21 +1,31 @@
-import { About } from "./components/About/About";
-import { Contact } from "./components/Contact/Contact";
-import { Footer } from "./components/Footer/Footer";
-import { Landing } from "./components/Landing/Landing";
-import { Portfolio } from "./components/Portfolio/Portfolio";
+import { AnimatePresence } from "framer-motion";
+import { BrowserRouter, Route, Switch } from "react-router-dom";
 import { NavContextProvider } from "./contexts/NavContext/NavContext";
+import { MainPage } from "./pages/mainPage/MainPage";
+import { ProjectPage } from "./pages/projectPage/ProjectPage";
 
 
 
 function App() {
   return (
-    <NavContextProvider>
-      <Landing />
-      <About />
-      <Portfolio />
-      <Contact />
-      <Footer />
-    </NavContextProvider>
+    <BrowserRouter basename={process.env.PUBLIC_URL}>
+      <NavContextProvider>
+      <Route 
+        render={({ location }) => (
+          <AnimatePresence exitBeforeEnter initial={false} >
+            <Switch location={location} key={location.key}>
+              <Route exact path="/">
+                <MainPage />
+              </Route>
+              <Route exact path="/projects">
+                <ProjectPage />
+              </Route>
+            </Switch>
+          </AnimatePresence>
+        )}
+      />
+      </NavContextProvider>
+    </BrowserRouter>
   );
 }
 

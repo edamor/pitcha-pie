@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import { useInView } from "react-intersection-observer";
+import { useLocation } from "react-router-dom";
 import { useNavContext } from "../../contexts/NavContext/NavContext";
 import { ContactForm } from "./ContactForm";
 import { ContactHeader } from "./ContactHeader";
@@ -8,7 +9,7 @@ import { SubHeader } from "./SubHeader";
 
 const style = {
   position: "absolute",
-  top: "25vh",
+  top: "50vh",
   zIndex: -1
 }
 
@@ -16,8 +17,8 @@ const style = {
 export const Contact = () => {
 
   const { contactRef, setActiveNav } = useNavContext();
-
   const [ref, inView] = useInView();
+  const location = useLocation();
 
   useEffect(() => {
     if (inView) {
@@ -26,6 +27,12 @@ export const Contact = () => {
       })
     }
   }, [inView, setActiveNav])
+
+  useEffect(() => {
+    if (location.state === "contact") {
+      contactRef.current.scrollIntoView({behavior: "smooth"})
+    }
+  }, [contactRef, location.state])
 
   return (
     <section id="contact" className=" bg-contact contact-page" ref={contactRef} >

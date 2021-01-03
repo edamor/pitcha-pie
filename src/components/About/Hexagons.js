@@ -4,7 +4,7 @@ import { useInView } from "react-intersection-observer";
 
 export const Hexagons = () => {
 
-  const [ref, inView] = useInView({threshold: 0.12});
+  const [ref, inView] = useInView();
 
   return (
     <div className="flex row label-wrap" ref={ref} >

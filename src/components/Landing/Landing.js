@@ -1,9 +1,10 @@
 import { motion } from "framer-motion";
 import { useEffect } from "react";
 import { useInView } from "react-intersection-observer";
+import { useLocation } from "react-router-dom";
 import { useNavContext } from "../../contexts/NavContext/NavContext"
 import { LandingPageBg } from "../Canvas/Canvas";
-import { Nav } from "../Nav/Nav"
+import { Nav } from "../Nav/Nav";
 import { ArrowDown } from "../SvgIcons/SvgIcons";
 import "./landing.css"
 
@@ -25,15 +26,15 @@ const textMotion = {
 
 const style = {
   position: "absolute",
-  top: "25vh",
+  top: "50vh",
   zIndex: -1
 }
 
 export const Landing = () => {
 
   const { landingRef, portfolioRef, setActiveNav } = useNavContext();
-
   const [ref, inView] = useInView();
+  const location = useLocation();
 
   function viewProjects() {
     portfolioRef.current.scrollIntoView({behavior: "smooth"})
@@ -46,6 +47,12 @@ export const Landing = () => {
       })
     }
   }, [inView, setActiveNav])
+
+  useEffect(() => {
+    if (location.state === "landing") {
+      landingRef.current.scrollIntoView({behavior: "smooth"})
+    }
+  }, [landingRef, location.state])
 
   return (
     <section id="home" className="landing-page bg-landing flex" ref={landingRef}>
